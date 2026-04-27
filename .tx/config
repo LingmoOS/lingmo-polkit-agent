@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[o:linuxdeepin:p:deepin-desktop-environment:r:6f259b4c172a97720fe771ccd9c4b2ab]
+file_filter = translations/dde-polkit-agent_<lang>.ts
+source_file = translations/dde-polkit-agent.ts
+source_lang = en
+type = QT
