@@ -1,7 +1,7 @@
-Source: dde-polkit-agent
+Source: lingmo-polkit-agent
 Section: devel
 Priority: optional
-Maintainer: Deepin Packages Builder <packages@deepin.com>
+Maintainer: Lingmo OS Team <team@lingmo.org>
 Build-Depends: debhelper (>=9),
 	pkg-config,
 	cmake,
@@ -13,8 +13,8 @@ Build-Depends: debhelper (>=9),
 	libdtk6core-bin,
 	libdde-shell-dev,
 	lsb-release
-Standards-Version: 3.9.8
-Homepage: https://github.com/linuxdeepin/dde-polkit-agent
+Standards-Version: 4.5.0
+Homepage: https://github.com/LingmoOS/lingmo-polkit-agent
 
 Package: dde-polkit-agent
 Architecture: any
