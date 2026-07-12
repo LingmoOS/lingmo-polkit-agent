@@ -1,4 +1,4 @@
-%global repo dde-polkit-agent
+%global repo lingmo-polkit-agent
 
 %define pkgrelease  1
 %if 0%{?openeuler}
@@ -8,12 +8,12 @@
 %define specrelease %{pkgrelease}%{?dist}
 %endif
 
-Name:           dde-polkit-agent
+Name:           lingmo-polkit-agent
 Version:        5.4.5
 Release:        %{specrelease}
 Summary:        Deepin Polkit Agent
 License:        GPLv3
-URL:            https://github.com/linuxdeepin/dde-polkit-agent
+URL:            https://github.com/linuxdeepin/lingmo-polkit-agent
 Source0:        %{name}-%{version}.orig.tar.xz
 
 BuildRequires:  cmake
@@ -53,7 +53,7 @@ export PATH=%{_qt5_bindir}:$PATH
 %files
 %doc README.md
 %license LICENSE
-%{_prefix}/lib/polkit-1-dde/dde-polkit-agent
+%{_prefix}/lib/polkit-1-dde/lingmo-polkit-agent
 %{_datadir}/%{repo}/
 
 %files devel

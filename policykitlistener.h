@@ -19,7 +19,7 @@ using namespace PolkitQt1::Agent;
 class PolicyKitListener : public Listener
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.dde.Polkit1.AuthAgent")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Polkit1.AuthAgent")
 public:
     explicit PolicyKitListener(QObject *parent = nullptr);
     virtual ~PolicyKitListener() override;

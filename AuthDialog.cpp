@@ -89,7 +89,7 @@ void AuthDialog::addOptions(QButtonGroup *bg)
 bool AuthDialog::hasSecurityHighLever(QString userName)
 {
     bool re = false;
-    QDBusInterface securityEnhance("com.deepin.daemon.SecurityEnhance",
+    QDBusInterface securityEnhance("com.lingmo.daemon.SecurityEnhance",
                                    "/com/deepin/daemon/SecurityEnhance",
                                    "com.deepin.daemon.SecurityEnhance",
                                    QDBusConnection::systemBus());
@@ -106,7 +106,7 @@ bool AuthDialog::hasSecurityHighLever(QString userName)
 bool AuthDialog::hasOpenSecurity()
 {
     bool hasOpen = false;
-    QDBusInterface securityEnhance("com.deepin.daemon.SecurityEnhance",
+    QDBusInterface securityEnhance("com.lingmo.daemon.SecurityEnhance",
                             "/com/deepin/daemon/SecurityEnhance",
                             "com.deepin.daemon.SecurityEnhance",
                             QDBusConnection::systemBus());
@@ -165,12 +165,12 @@ void AuthDialog::createUserCB(const PolkitQt1::Identity::List &identities)
 // 判断用户密码是否在有效期内
 bool AuthDialog::passwordIsExpired(PolkitQt1::Identity identity)
 {
-    QDBusInterface accounts("org.deepin.dde.Accounts1", "/org/deepin/dde/Accounts1", "org.deepin.dde.Accounts1", QDBusConnection::systemBus());
+    QDBusInterface accounts("org.lingmo.Accounts1", "/org/lingmo/Accounts1", "org.lingmo.Accounts1", QDBusConnection::systemBus());
     QDBusReply<QString> reply = accounts.call("FindUserById", QString::number(identity.toUnixUserIdentity().uid()));
     if (reply.isValid()) {
         const QString path = reply.value();
         if (!path.isEmpty()) {
-            QDBusInterface accounts_user("org.deepin.dde.Accounts1", path, "org.deepin.dde.Accounts1.User", QDBusConnection::systemBus());
+            QDBusInterface accounts_user("org.lingmo.Accounts1", path, "org.lingmo.Accounts1.User", QDBusConnection::systemBus());
             QDBusReply<bool> expiredReply = accounts_user.call("IsPasswordExpired");
             if (expiredReply.isValid())
                 return expiredReply.value();

@@ -12,8 +12,8 @@
 #include "accounts1interface.h"
 #include "accounts1userinterface.h"
 
-using AccountsDBus = org::deepin::dde::Accounts1;
-using UserDBus = org::deepin::dde::accounts1::User;
+using AccountsDBus = org::lingmo::Accounts1;
+using UserDBus = org::lingmo::accounts1::User;
 
 class UsersManager : public QObject
 {

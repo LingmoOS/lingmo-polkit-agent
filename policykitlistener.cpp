@@ -30,10 +30,10 @@ PolicyKitListener::PolicyKitListener(QObject *parent)
     (void) new AuthAgentAdaptor(this);
 
     QDBusConnection sessionBus = QDBusConnection::sessionBus();
-    if (!sessionBus.registerService("org.deepin.dde.Polkit1.AuthAgent")) {
+    if (!sessionBus.registerService("org.lingmo.Polkit1.AuthAgent")) {
         qWarning() << "Register auth agent service failed!";
     }
-    if (!sessionBus.registerObject("/com/deepin/dde/Polkit1/AuthAgent", this,
+    if (!sessionBus.registerObject("/com/lingmo/Polkit1/AuthAgent", this,
                                    QDBusConnection::ExportScriptableSlots |
                                    QDBusConnection::ExportScriptableProperties |
                                    QDBusConnection::ExportAdaptors)) {
@@ -322,7 +322,7 @@ void PolicyKitListener::fillResult()
 static bool isAccountLocked(const PolkitQt1::Identity &identity)
 {
     QString userName = identity.toString().replace("unix-user:", "");
-    QDBusMessage msg = QDBusMessage::createMethodCall("org.deepin.dde.Authenticate1",
+    QDBusMessage msg = QDBusMessage::createMethodCall("org.lingmo.Authenticate1",
                                                       "/org/deepin/dde/Authenticate1",
                                                       "org.deepin.dde.Authenticate1",
                                                       "GetLimits");
